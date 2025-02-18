@@ -1,0 +1,186 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for better box model handling */
+}
+
+body {
+    background-color: rgb(254, 238, 255);
+    font-family: 'Open Sans', sans-serif; /* Set a default font for the body */
+    line-height: 1.6; /* Improved readability */
+}
+
+/* Header Styles */
+header {
+    height: 80px;
+    display: flex;
+    justify-content: center; /* Centered header content */
+    align-items: center; /* Vertically centered */
+    background-color: rgb(252, 237, 218); /* Added background color */
+}
+
+header h1 {
+    font-size: 36px; /* Increased font size for better visibility */
+    color: rgb(187, 144, 87);
+}
+
+/* Horizontal Rule Styles */
+.hr_head {
+    margin: 20px auto; /* Centered and added top/bottom margin */
+    width: 90%; /* Set width to 90% of the container */
+    background-color: rgb(252, 237, 218);
+    height: 5px;
+    border: none;
+    border-radius: 7px;
+    animation: slideIn 2s forwards;
+}
+
+/* Main Section Styles */
+.main_section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    padding: 20px; 
+}
+
+.main_section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/img/5ca1362d03c55dec92185923115b3945.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.1; /* Subtle background image */
+}
+
+/* About Me Section */
+.about_me {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 50px; /* Space between items */
+    margin-top: 50px;
+}
+
+.main_photo {
+    border-radius: 30px;
+    width: 100%;
+}
+
+.name {
+    font-size: 32px;
+    font-weight: bold; /* Emphasize the name */
+}
+
+.profession,
+.slogan {
+    color: rgba(0, 0, 0, 0.6); /* Slightly darker for better readability */
+}
+
+/* Contact Buttons */
+/* Contact Buttons */
+.watsup,
+.telegram {
+   background-color: rgb(251, 232, 209);
+   display: flex; /* Align icon, text, and arrow horizontally */
+   align-items: center; /* Center items vertically */
+   justify-content: space-between; /* Space between icon, text, and arrow */
+   margin-top: 20px; /* Add spacing between buttons */
+   height: 45px;
+   border-radius: 20px;
+   font-size: 16px;
+   padding: 0 15px; /* Horizontal padding for spacing */
+   text-decoration: none; /* Remove underline from links */
+   color: black; /* Set text color to black */
+}
+
+/* Hover Effect */
+.watsup:hover,
+.telegram:hover {
+   background-color: rgb(240, 220, 195); 
+   transform: scale(1.05);
+   transition-duration: 0.3s; /* Smooth hover effect */
+}
+
+/* Icon Styles (Left-Aligned) */
+.whatsapp_icon,
+.telegram_icon {
+   width: 24px; 
+   margin-right: 10px; /* Space between icon and text */
+}
+
+/* Arrow Styles (Right-Aligned) */
+.watsup::after,
+.telegram::after {
+    content: '>'; /* Right-facing arrow (greater-than symbol) */
+    font-weight: bold; /* Make the arrow bold for visibility */
+    margin-left: auto; /* Push arrow to the far right */
+    margin-right: 5px; /* Small space between arrow and button edge */
+    color: black; /* Set arrow color to black */
+}
+
+
+
+/* Skills & Achievements Section Styles */
+.skills_achievements,
+.services {
+   max-width :1200px ; 
+   width :100%; 
+   margin-top :40px ; 
+   padding :20px ; 
+   background-color :rgba(255,255,255,0.8); /* Light background for sections */
+   border-radius :10px ; 
+   box-shadow :rgba(0,0,0,0.1) 0px 4px 8px; /* Subtle shadow for depth */
+}
+
+h2 {
+   font-size :28px ; 
+   margin-bottom :20px ; 
+   color :rgb(187,144,87);
+}
+
+.service_item {
+   margin-bottom :20px ; 
+}
+
+/* Responsive Design Adjustments */
+@media (max-width :768px) {
+   .about_me {
+       grid-template-columns :auto; 
+       gap :30px ; 
+   }
+
+   .main_photo {
+       max-width :100%; 
+       margin-bottom :20px ; /* Added margin below photo for spacing */
+   }
+
+   .name,
+   .profession,
+   .slogan,
+   h2 {
+       font-size :24px ; 
+       text-align:center ; /* Centered text on smaller screens */
+   }
+
+   .watsup,
+   .telegram {
+       height :40 px ; 
+       font-size :14 px ; 
+       padding-left :5 px; /* Reduced padding on smaller screens */
+   }
+}
+
+@media (min-width :1366px) { 
+   .name { font-size :40 px; }
+}
+
+@media (min-width :1920px) { 
+   .about_me { gap :150 px; }
+}
